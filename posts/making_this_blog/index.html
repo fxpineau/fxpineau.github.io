@@ -10,9 +10,9 @@
 <meta name="author" content="F.-X. Pineau" /><meta property="og:title" content="Making this blog" />
 <meta property="og:description" content="Why a blog?  Because we understand more deeply something when we have to explain it To possibly save time to others &ndash; and myslef &ndash; by  providing relevant links already found completing available documentation depending on specific needs not to have to dig into my source codes to remember how I already solved a problem   To promote the usage of Rust 😆 To share Rust experience with others: so far most of my colleagues do not use Rust 😔  Framework and Hosting From a quick search, I decided to use" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fxpineau.github.io/blog/making_this_blog/" />
-<meta property="article:published_time" content="2020-05-19T15:20:01+02:00" />
-<meta property="article:modified_time" content="2020-05-19T15:20:01+02:00" />
+<meta property="og:url" content="https://fxpineau.github.io/posts/making_this_blog/" />
+<meta property="article:published_time" content="2020-07-01T18:00:00+02:00" />
+<meta property="article:modified_time" content="2020-07-01T18:00:00+02:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Making this blog"/>
@@ -94,7 +94,7 @@
       <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2020-05-19T15:20:01&#43;02:00">May 19, 2020</time>
+            <time class="post-date" datetime="2020-07-01T18:00:00&#43;02:00">Jul 1, 2020</time>
         </li>
         
         <li>
@@ -125,7 +125,7 @@
         </li>
         
 
-        <li>3 minutes read</li>
+        <li>4 minutes read</li>
     </ul>
 </aside>
 
@@ -150,82 +150,139 @@
 <h2 id="framework-and-hosting">Framework and Hosting</h2>
 <p>From a quick search, I decided to use</p>
 <ul>
-<li><a href="https://gohugo.io/">hugo</a>: easy tos et up and fast
+<li><a href="https://gohugo.io/">hugo</a>: easy to set up and use, matches my simple needs, and fast
 <ul>
-<li>alternatives where e.g. <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://www.gatsbyjs.org/">Gatsby</a></li>
+<li>alternatives where e.g. <a href="https://jekyllrb.com/">Jekyll</a> and possibly <a href="https://www.gatsbyjs.org/">Gatsby</a></li>
 <li>see for example <a href="https://victoria.dev/blog/hugo-vs-jekyll-an-epic-battle-of-static-site-generator-themes/">this comparison</a></li>
 </ul>
 </li>
-<li><a href="https://github.com/">github</a>: because I already have a github account</li>
+<li><a href="https://github.com/">github</a>: because I already have a github account and do no pretend to target a large audience</li>
 </ul>
 <h2 id="setup">Setup</h2>
-<p>Those choices made, let&rsquo;s setup the blog.<br>
-I am running an <strong>Ubuntu 18.04.4 LTS</strong> (<code>lsb_release -a</code>).</p>
+<p>I am running an <strong>Ubuntu 18.04.4 LTS</strong> (<code>lsb_release -a</code>) so I am going to use
+the <code>snap</code> package manager. On MacOS, you can use <code>brew</code>.</p>
 <h3 id="hugo-install">Hugo Install</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># First install go</span>
 sudo snap install go --classic
 <span style="color:#75715e"># Then install hugo</span>
 sudo snap install hugo --channel<span style="color:#f92672">=</span>extended
 </code></pre></div><h3 id="create-blog-site">Create blog site</h3>
-<p>I decided to simple name the website <em>blog</em> using the existing <a href="https://themes.gohugo.io/hugo-kiera/">hugo-kiera</a> theme:</p>
+<p>I decided to locally name my static website <em>blog</em> and to use the existing <a href="https://themes.gohugo.io/hugo-kiera/">hugo-kiera</a> theme:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create site</span>
 hugo new site blog
+<span style="color:#75715e"># Install the theme in the newly created site project</span>
 cd blog
-<span style="color:#75715e"># Install the theme</span>
 git init
 cd themes
 git submodule add https://github.com/funkydan2/hugo-kiera.git
 </code></pre></div><p>To later update the theme, simply use:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd themes
 git submodule update --rebase --remote
-</code></pre></div><p>Then edit the <em>config.tom</em> file at the <em>blog</em> root:</p>
+</code></pre></div><p>The next step is to edit the <em>config.tom</em> file at the <em>blog</em> root. To help you:</p>
 <ul>
 <li>see <a href="https://gohugo.io/getting-started/configuration/">the list</a> of general parameters</li>
 <li>see also <a href="https://gohugo.io/variables/site/">the list</a> of variables</li>
 <li>see the <em>Configuration</em> of the <a href="https://themes.gohugo.io/hugo-kiera/">hugo-keria</a> theme</li>
 <li>see the local file <code>themes/hugo-kiera/exampleSite/config.toml</code></li>
 </ul>
-<p>WARNING: when using <a href="https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">github pages</a>,
-it is important to add to the <em>config.toml</em> file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">publishDir = &#34;docs&#34;
-</code></pre></div><p>Its is the directory in which <em>hugo</em> will generate the static we site, which is also the repository
-expected by github to contains the web site.</p>
+<p>Here an example of config file used for this blog:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">languageCode = &#34;en-us&#34;
+theme = &#34;hugo-kiera&#34;
+
+# Other params
+canonifyURLs = true
+
+paginate = 3
+
+# Params given by hugo-keria
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = &#34;F.-X. Pineau&#34;
+    github = &#34;fxpineau&#34;
+    linkedin = &#34;françois-xavier-pineau-bb31473a&#34;
+    twitter = &#34;@EphicksP&#34;  
+
+[params]
+    tagline = &#34;Self-reminders, may they also be of use to others&#34;
+    description = &#34;FX&#39;s blog: Self-reminders, may they also be of use to others.&#34;
+    customCSS = []  #Optional Customised CSS
+    disableComments = true
+
+  [[menu.main]]
+    identifier = &#34;tags&#34;
+    name = &#34;Tags&#34;
+    url = &#34;/tags&#34;
+    weight = 1
+
+  [[menu.main]]
+    identifier = &#34;categories&#34;
+    name = &#34;Categories&#34;
+    url = &#34;/categories&#34;
+    weight = 1
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="create-a-new-article">Create a new article</h2>
-<p>If you are curious, you can learn more on the <em>Hugo</em> <a href="https://gohugo.io/getting-started/directory-structure/">directory structure</a>.</p>
 <p>To add a new blog entry:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new blog/my_new_post.md
-</code></pre></div><p>One can also use static pages like an <em>about</em> page:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/my_new_post.md
+</code></pre></div><p>it will create the new markdown file in <code>content/posts</code>.</p>
+<p>One can also use static pages like an <em>about</em> page:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new about.md
-</code></pre></div><h3 id="use-tags">Use <code>tags</code></h3>
+</code></pre></div><p>If you are curious, you can learn more on the <em>Hugo</em>
+<a href="https://gohugo.io/getting-started/directory-structure/">directory structure</a>.</p>
+<h3 id="edit-a-post-and-use-tags-and-categories">Edit a post and use <code>tags</code> and <code>categories</code></h3>
 <p>Edit the newly created file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim content/blog/my_new_post.md
-</code></pre></div><p>And add values in the <code>tag</code> and <code>category</code> header. E.g. :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">tags: [rust, cow, parsing]
+</code></pre></div><p>And fill the <code>tag</code> and <code>category</code> header fields. E.g. :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">---
+title: &#34;Rusty Cow!&#34;
+date: 2020-05-15T18:00:00+02:00
+tags: [rust, cow, parsing]
 categories: [rust advanced]
-</code></pre></div><p>See possible <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji</a></p>
+---
+</code></pre></div><p>See the list of possible <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji</a>
+you can use in you markdow sources.</p>
 <h2 id="create-a-github-page">Create a github page</h2>
-<p>All information are available <a href="https://pages.github.com/">here</a>:</p>
-<ul>
-<li>create a new repository named <em>username</em>.github.io</li>
-</ul>
+<p>All information are available <a href="https://pages.github.com/">here</a>,
+basically you only have to create a new github repository using the special
+name <em>username</em>.github.io (of course, you must replace <em>username</em> by your username).</p>
 <h2 id="build-and-deploy">Build and deploy</h2>
+<h3 id="generate-the-static-files">Generate the static files</h3>
 <p>Build and test on localhost (including drafts)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -D
 </code></pre></div><p>Build the site (including drafts)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D
 </code></pre></div><p>Build (without draft)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo
-</code></pre></div><p>Deploy and github (from the <code>blog</code> master directory)</p>
+</code></pre></div><p>By default the site is created in the <code>public</code> directory, but you can change
+this default by setting the a variable in <code>config.toml</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">publishDir = &#34;target/blog&#34;
+</code></pre></div><h3 id="deploy-and-github-poor-man-approach">Deploy and github (poor man approach).</h3>
+<p>First, go into the hugo generated <code>publishDir</code> (<code>public</code> by default)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 git add -A
-git commit -m <span style="color:#e6db74">&#34;First commit&#34;</span>
-git remote add origin https://github.com/fxpineau/fxpineau.github.io.git
+git commit -m <span style="color:#e6db74">&#34;Commit of my blog&#34;</span>
+git remote add origin https://github.com/username/username.github.io.git
 git push -u origin master
-</code></pre></div><h2 id="links">Links</h2>
+</code></pre></div><p>WARNING: doing so, you keep the history of file generated by <em>hugo</em> which is not necessarily useful.
+So when generating a new version of your site, you may use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
+git commit --amend
+git push --force
+</code></pre></div><p>A cleaner way is to setup a github action executing hugo on your versioned sources.
+To do so, see e.g.:</p>
+<ul>
+<li><a href="https://github.com/marketplace/actions/hugo-to-gh-pages">hugo action</a></li>
+<li>or follow e.g. <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch">this tuto</a></li>
+</ul>
+<p>Go check the result on <code>https://username.github.io</code> :)</p>
+<h2 id="links">Links</h2>
 <ul>
 <li>The <a href="https://github.com/avianto/hugo-kiera">hugo-kiera</a> page.</li>
 <li>If formula are needed, check <a href="https://sourcethemes.com/academic/">academic</a> and <a href="https://georgecushen.com/create-your-website-with-hugo/">this academic examle</a></li>
-<li>Blog used as example:
+<li>An example of hugo-keria blog (using the github <code>docs</code> directory):
 <ul>
 <li><a href="https://tarquin-the-brave.github.io/blog/">https://tarquin-the-brave.github.io/blog/</a></li>
 <li><a href="https://github.com/tarquin-the-brave/blog">https://github.com/tarquin-the-brave/blog</a></li>
@@ -242,40 +299,13 @@ git push -u origin master
     <ul>
         
         <li>
-            <a href="https://fxpineau.github.io/blog/rusty_cow/"><i class="fa fa-chevron-circle-left"></i> Rusty Cow!</a>
+            <a href="https://fxpineau.github.io/posts/rusty_cow/"><i class="fa fa-chevron-circle-left"></i> Rusty Cow!</a>
         </li>
         
         
     </ul>
 </section>
   
-    
-        <section id="utterances"></section>
-
-<script>
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        let s = document.createElement("script");
-        s.setAttribute("repo", "fxpineau\/blog");
-        s.src = "https://utteranc.es/client.js";
-        
-          s.setAttribute("issue-term", "pathname");
-        
-        
-        document.getElementById("utterances").innerHTML = "";
-        document.getElementById("utterances").appendChild(s);
-    } else {
-        let s = document.createElement("script");
-        s.setAttribute("repo", "fxpineau\/blog");
-        s.src = "https://utteranc.es/client.js";
-        
-          s.setAttribute("issue-term", "pathname");
-        
-        
-        document.getElementById("utterances").innerHTML = "";
-        document.getElementById("utterances").appendChild(s);
-    }
-</script>
-
     
     
   

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
    <title>Blogs on Ephicks&#39;s blog</title>
-   <link>https://fxpineau.github.io/blog/blog/</link>
+   <link>https://fxpineau.github.io/blog/</link>
    <description>Recent content in Blogs on Ephicks&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>en-us</language>
    <copyright>Copyright &amp;copy; 2020 - F.-X. Pineau</copyright>
    <lastBuildDate>Tue, 19 May 2020 15:20:01 +0200</lastBuildDate>
    
-       <atom:link href="https://fxpineau.github.io/blog/blog/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://fxpineau.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
        <title>Making this blog</title>
-       <link>https://fxpineau.github.io/blog/blog/making_this_blog/</link>
+       <link>https://fxpineau.github.io/blog/making_this_blog/</link>
        <pubDate>Tue, 19 May 2020 15:20:01 +0200</pubDate>
        
-       <guid>https://fxpineau.github.io/blog/blog/making_this_blog/</guid>
+       <guid>https://fxpineau.github.io/blog/making_this_blog/</guid>
        <description>&lt;h2 id=&#34;why-a-blog&#34;&gt;Why a blog?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Because we understand more deeply something when we have to explain it&lt;/li&gt;
@@ -122,10 +122,10 @@ git push -u origin master
    
      <item>
        <title>Rusty Cow!</title>
-       <link>https://fxpineau.github.io/blog/blog/rusty_cow/</link>
+       <link>https://fxpineau.github.io/blog/rusty_cow/</link>
        <pubDate>Fri, 15 May 2020 09:31:24 +0200</pubDate>
        
-       <guid>https://fxpineau.github.io/blog/blog/rusty_cow/</guid>
+       <guid>https://fxpineau.github.io/blog/rusty_cow/</guid>
        <description>&lt;p&gt;An example use of the &lt;em&gt;clone-on-write&lt;/em&gt; smart pointer in &lt;em&gt;Rust&lt;/em&gt;, or &lt;code&gt;Cow&lt;/code&gt; for intimates.&lt;/p&gt;
 &lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;I want to parse a &lt;em&gt;String&lt;/em&gt; that may contain &amp;ndash; in rare cases &amp;ndash; an escaped character.

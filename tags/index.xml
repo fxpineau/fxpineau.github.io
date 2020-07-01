@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
    <title>Tags on Ephicks&#39;s blog</title>
-   <link>https://fxpineau.github.io/blog/tags/</link>
+   <link>https://fxpineau.github.io/tags/</link>
    <description>Recent content in Tags on Ephicks&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>en-us</language>
    <copyright>Copyright &amp;copy; 2020 - F.-X. Pineau</copyright>
-   <lastBuildDate>Tue, 19 May 2020 15:20:01 +0200</lastBuildDate>
+   <lastBuildDate>Wed, 01 Jul 2020 18:00:00 +0200</lastBuildDate>
    
-       <atom:link href="https://fxpineau.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://fxpineau.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
        <title>Making this blog</title>
-       <link>https://fxpineau.github.io/blog/blog/making_this_blog/</link>
-       <pubDate>Tue, 19 May 2020 15:20:01 +0200</pubDate>
+       <link>https://fxpineau.github.io/posts/making_this_blog/</link>
+       <pubDate>Wed, 01 Jul 2020 18:00:00 +0200</pubDate>
        
-       <guid>https://fxpineau.github.io/blog/blog/making_this_blog/</guid>
+       <guid>https://fxpineau.github.io/posts/making_this_blog/</guid>
        <description>&lt;h2 id=&#34;why-a-blog&#34;&gt;Why a blog?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Because we understand more deeply something when we have to explain it&lt;/li&gt;
@@ -34,82 +34,139 @@
 &lt;h2 id=&#34;framework-and-hosting&#34;&gt;Framework and Hosting&lt;/h2&gt;
 &lt;p&gt;From a quick search, I decided to use&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;: easy tos et up and fast
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;: easy to set up and use, matches my simple needs, and fast
 &lt;ul&gt;
-&lt;li&gt;alternatives where e.g. &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://www.gatsbyjs.org/&#34;&gt;Gatsby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;alternatives where e.g. &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and possibly &lt;a href=&#34;https://www.gatsbyjs.org/&#34;&gt;Gatsby&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;see for example &lt;a href=&#34;https://victoria.dev/blog/hugo-vs-jekyll-an-epic-battle-of-static-site-generator-themes/&#34;&gt;this comparison&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;: because I already have a github account&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;: because I already have a github account and do no pretend to target a large audience&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-&lt;p&gt;Those choices made, let&amp;rsquo;s setup the blog.&lt;br&gt;
-I am running an &lt;strong&gt;Ubuntu 18.04.4 LTS&lt;/strong&gt; (&lt;code&gt;lsb_release -a&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;I am running an &lt;strong&gt;Ubuntu 18.04.4 LTS&lt;/strong&gt; (&lt;code&gt;lsb_release -a&lt;/code&gt;) so I am going to use
+the &lt;code&gt;snap&lt;/code&gt; package manager. On MacOS, you can use &lt;code&gt;brew&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;hugo-install&#34;&gt;Hugo Install&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# First install go&lt;/span&gt;
 sudo snap install go --classic
 &lt;span style=&#34;color:#75715e&#34;&gt;# Then install hugo&lt;/span&gt;
 sudo snap install hugo --channel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;extended
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;create-blog-site&#34;&gt;Create blog site&lt;/h3&gt;
-&lt;p&gt;I decided to simple name the website &lt;em&gt;blog&lt;/em&gt; using the existing &lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;hugo-kiera&lt;/a&gt; theme:&lt;/p&gt;
+&lt;p&gt;I decided to locally name my static website &lt;em&gt;blog&lt;/em&gt; and to use the existing &lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;hugo-kiera&lt;/a&gt; theme:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create site&lt;/span&gt;
 hugo new site blog
+&lt;span style=&#34;color:#75715e&#34;&gt;# Install the theme in the newly created site project&lt;/span&gt;
 cd blog
-&lt;span style=&#34;color:#75715e&#34;&gt;# Install the theme&lt;/span&gt;
 git init
 cd themes
 git submodule add https://github.com/funkydan2/hugo-kiera.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To later update the theme, simply use:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd themes
 git submodule update --rebase --remote
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then edit the &lt;em&gt;config.tom&lt;/em&gt; file at the &lt;em&gt;blog&lt;/em&gt; root:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The next step is to edit the &lt;em&gt;config.tom&lt;/em&gt; file at the &lt;em&gt;blog&lt;/em&gt; root. To help you:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;see &lt;a href=&#34;https://gohugo.io/getting-started/configuration/&#34;&gt;the list&lt;/a&gt; of general parameters&lt;/li&gt;
 &lt;li&gt;see also &lt;a href=&#34;https://gohugo.io/variables/site/&#34;&gt;the list&lt;/a&gt; of variables&lt;/li&gt;
 &lt;li&gt;see the &lt;em&gt;Configuration&lt;/em&gt; of the &lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;hugo-keria&lt;/a&gt; theme&lt;/li&gt;
 &lt;li&gt;see the local file &lt;code&gt;themes/hugo-kiera/exampleSite/config.toml&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;WARNING: when using &lt;a href=&#34;https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&#34;&gt;github pages&lt;/a&gt;,
-it is important to add to the &lt;em&gt;config.toml&lt;/em&gt; file&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;publishDir = &amp;#34;docs&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Its is the directory in which &lt;em&gt;hugo&lt;/em&gt; will generate the static we site, which is also the repository
-expected by github to contains the web site.&lt;/p&gt;
+&lt;p&gt;Here an example of config file used for this blog:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;languageCode = &amp;#34;en-us&amp;#34;
+theme = &amp;#34;hugo-kiera&amp;#34;
+
+# Other params
+canonifyURLs = true
+
+paginate = 3
+
+# Params given by hugo-keria
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = &amp;#34;F.-X. Pineau&amp;#34;
+    github = &amp;#34;fxpineau&amp;#34;
+    linkedin = &amp;#34;françois-xavier-pineau-bb31473a&amp;#34;
+    twitter = &amp;#34;@EphicksP&amp;#34;  
+
+[params]
+    tagline = &amp;#34;Self-reminders, may they also be of use to others&amp;#34;
+    description = &amp;#34;FX&amp;#39;s blog: Self-reminders, may they also be of use to others.&amp;#34;
+    customCSS = []  #Optional Customised CSS
+    disableComments = true
+
+  [[menu.main]]
+    identifier = &amp;#34;tags&amp;#34;
+    name = &amp;#34;Tags&amp;#34;
+    url = &amp;#34;/tags&amp;#34;
+    weight = 1
+
+  [[menu.main]]
+    identifier = &amp;#34;categories&amp;#34;
+    name = &amp;#34;Categories&amp;#34;
+    url = &amp;#34;/categories&amp;#34;
+    weight = 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;create-a-new-article&#34;&gt;Create a new article&lt;/h2&gt;
-&lt;p&gt;If you are curious, you can learn more on the &lt;em&gt;Hugo&lt;/em&gt; &lt;a href=&#34;https://gohugo.io/getting-started/directory-structure/&#34;&gt;directory structure&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To add a new blog entry:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new blog/my_new_post.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;One can also use static pages like an &lt;em&gt;about&lt;/em&gt; page:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new posts/my_new_post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;it will create the new markdown file in &lt;code&gt;content/posts&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One can also use static pages like an &lt;em&gt;about&lt;/em&gt; page:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new about.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;use-tags&#34;&gt;Use &lt;code&gt;tags&lt;/code&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you are curious, you can learn more on the &lt;em&gt;Hugo&lt;/em&gt;
+&lt;a href=&#34;https://gohugo.io/getting-started/directory-structure/&#34;&gt;directory structure&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;edit-a-post-and-use-tags-and-categories&#34;&gt;Edit a post and use &lt;code&gt;tags&lt;/code&gt; and &lt;code&gt;categories&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Edit the newly created file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vim content/blog/my_new_post.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And add values in the &lt;code&gt;tag&lt;/code&gt; and &lt;code&gt;category&lt;/code&gt; header. E.g. :&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;tags: [rust, cow, parsing]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And fill the &lt;code&gt;tag&lt;/code&gt; and &lt;code&gt;category&lt;/code&gt; header fields. E.g. :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;---
+title: &amp;#34;Rusty Cow!&amp;#34;
+date: 2020-05-15T18:00:00+02:00
+tags: [rust, cow, parsing]
 categories: [rust advanced]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See possible &lt;a href=&#34;https://www.webfx.com/tools/emoji-cheat-sheet/&#34;&gt;emoji&lt;/a&gt;&lt;/p&gt;
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See the list of possible &lt;a href=&#34;https://www.webfx.com/tools/emoji-cheat-sheet/&#34;&gt;emoji&lt;/a&gt;
+you can use in you markdow sources.&lt;/p&gt;
 &lt;h2 id=&#34;create-a-github-page&#34;&gt;Create a github page&lt;/h2&gt;
-&lt;p&gt;All information are available &lt;a href=&#34;https://pages.github.com/&#34;&gt;here&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;create a new repository named &lt;em&gt;username&lt;/em&gt;.github.io&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;All information are available &lt;a href=&#34;https://pages.github.com/&#34;&gt;here&lt;/a&gt;,
+basically you only have to create a new github repository using the special
+name &lt;em&gt;username&lt;/em&gt;.github.io (of course, you must replace &lt;em&gt;username&lt;/em&gt; by your username).&lt;/p&gt;
 &lt;h2 id=&#34;build-and-deploy&#34;&gt;Build and deploy&lt;/h2&gt;
+&lt;h3 id=&#34;generate-the-static-files&#34;&gt;Generate the static files&lt;/h3&gt;
 &lt;p&gt;Build and test on localhost (including drafts)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build the site (including drafts)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo -D
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build (without draft)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deploy and github (from the &lt;code&gt;blog&lt;/code&gt; master directory)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By default the site is created in the &lt;code&gt;public&lt;/code&gt; directory, but you can change
+this default by setting the a variable in &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;publishDir = &amp;#34;target/blog&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;deploy-and-github-poor-man-approach&#34;&gt;Deploy and github (poor man approach).&lt;/h3&gt;
+&lt;p&gt;First, go into the hugo generated &lt;code&gt;publishDir&lt;/code&gt; (&lt;code&gt;public&lt;/code&gt; by default)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git init
 git add -A
-git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;First commit&amp;#34;&lt;/span&gt;
-git remote add origin https://github.com/fxpineau/fxpineau.github.io.git
+git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Commit of my blog&amp;#34;&lt;/span&gt;
+git remote add origin https://github.com/username/username.github.io.git
 git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;WARNING: doing so, you keep the history of file generated by &lt;em&gt;hugo&lt;/em&gt; which is not necessarily useful.
+So when generating a new version of your site, you may use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git add -A
+git commit --amend
+git push --force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A cleaner way is to setup a github action executing hugo on your versioned sources.
+To do so, see e.g.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/marketplace/actions/hugo-to-gh-pages&#34;&gt;hugo action&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;or follow e.g. &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch&#34;&gt;this tuto&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Go check the result on &lt;code&gt;https://username.github.io&lt;/code&gt; :)&lt;/p&gt;
+&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;a href=&#34;https://github.com/avianto/hugo-kiera&#34;&gt;hugo-kiera&lt;/a&gt; page.&lt;/li&gt;
 &lt;li&gt;If formula are needed, check &lt;a href=&#34;https://sourcethemes.com/academic/&#34;&gt;academic&lt;/a&gt; and &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34;&gt;this academic examle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Blog used as example:
+&lt;li&gt;An example of hugo-keria blog (using the github &lt;code&gt;docs&lt;/code&gt; directory):
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://tarquin-the-brave.github.io/blog/&#34;&gt;https://tarquin-the-brave.github.io/blog/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/tarquin-the-brave/blog&#34;&gt;https://github.com/tarquin-the-brave/blog&lt;/a&gt;&lt;/li&gt;
@@ -122,10 +179,10 @@ git push -u origin master
    
      <item>
        <title>Rusty Cow!</title>
-       <link>https://fxpineau.github.io/blog/blog/rusty_cow/</link>
-       <pubDate>Fri, 15 May 2020 09:31:24 +0200</pubDate>
+       <link>https://fxpineau.github.io/posts/rusty_cow/</link>
+       <pubDate>Fri, 15 May 2020 18:00:00 +0200</pubDate>
        
-       <guid>https://fxpineau.github.io/blog/blog/rusty_cow/</guid>
+       <guid>https://fxpineau.github.io/posts/rusty_cow/</guid>
        <description>&lt;p&gt;An example use of the &lt;em&gt;clone-on-write&lt;/em&gt; smart pointer in &lt;em&gt;Rust&lt;/em&gt;, or &lt;code&gt;Cow&lt;/code&gt; for intimates.&lt;/p&gt;
 &lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;I want to parse a &lt;em&gt;String&lt;/em&gt; that may contain &amp;ndash; in rare cases &amp;ndash; an escaped character.

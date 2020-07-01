@@ -3,78 +3,78 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fxpineau.github.io/blog/about/</loc>
+    <loc>https://fxpineau.github.io/about/</loc>
     <lastmod>2020-05-14T22:28:31+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/blog/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/blog/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/categories/blogging/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/categories/blogging/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/blog/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/categories/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/categories/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/github/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/github/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/hugo/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/hugo/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/posts/making_this_blog/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/blog/making_this_blog/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/posts/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/</loc>
-    <lastmod>2020-05-19T15:20:01+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/</loc>
+    <lastmod>2020-07-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/cow/</loc>
-    <lastmod>2020-05-15T09:31:24+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/cow/</loc>
+    <lastmod>2020-05-15T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/parsing/</loc>
-    <lastmod>2020-05-15T09:31:24+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/parsing/</loc>
+    <lastmod>2020-05-15T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/tags/rust/</loc>
-    <lastmod>2020-05-15T09:31:24+02:00</lastmod>
+    <loc>https://fxpineau.github.io/tags/rust/</loc>
+    <lastmod>2020-05-15T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/categories/rust-advanced/</loc>
-    <lastmod>2020-05-15T09:31:24+02:00</lastmod>
+    <loc>https://fxpineau.github.io/categories/rust-advanced/</loc>
+    <lastmod>2020-05-15T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fxpineau.github.io/blog/blog/rusty_cow/</loc>
-    <lastmod>2020-05-15T09:31:24+02:00</lastmod>
+    <loc>https://fxpineau.github.io/posts/rusty_cow/</loc>
+    <lastmod>2020-05-15T18:00:00+02:00</lastmod>
   </url>
   
 </urlset>
