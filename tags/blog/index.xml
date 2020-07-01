@@ -1,0 +1,281 @@
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+   <title>blog on Ephicks&#39;s blog</title>
+   <link>https://fxpineau.github.io/blog/tags/blog/</link>
+   <description>Recent content in blog on Ephicks&#39;s blog</description>
+   <generator>Hugo -- gohugo.io</generator>
+   <language>en-us</language>
+   <copyright>Copyright &amp;copy; 2020 - F.-X. Pineau</copyright>
+   <lastBuildDate>Tue, 19 May 2020 15:20:01 +0200</lastBuildDate>
+   
+       <atom:link href="https://fxpineau.github.io/blog/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+   
+   
+     <item>
+       <title>Making this blog</title>
+       <link>https://fxpineau.github.io/blog/blog/making_this_blog/</link>
+       <pubDate>Tue, 19 May 2020 15:20:01 +0200</pubDate>
+       
+       <guid>https://fxpineau.github.io/blog/blog/making_this_blog/</guid>
+       <description>&lt;h2 id=&#34;why-a-blog&#34;&gt;Why a blog?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Because we understand more deeply something when we have to explain it&lt;/li&gt;
+&lt;li&gt;To possibly save time to others &amp;ndash; and myslef &amp;ndash; by
+&lt;ul&gt;
+&lt;li&gt;providing relevant links already found&lt;/li&gt;
+&lt;li&gt;completing available documentation depending on specific needs&lt;/li&gt;
+&lt;li&gt;not to have to dig into my source codes to remember how I already solved a problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To promote the usage of Rust 😆&lt;/li&gt;
+&lt;li&gt;To share Rust experience with others: so far most of my colleagues do not use Rust 😔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;framework-and-hosting&#34;&gt;Framework and Hosting&lt;/h2&gt;
+&lt;p&gt;From a quick search, I decided to use&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;: easy tos et up and fast
+&lt;ul&gt;
+&lt;li&gt;alternatives where e.g. &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://www.gatsbyjs.org/&#34;&gt;Gatsby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;see for example &lt;a href=&#34;https://victoria.dev/blog/hugo-vs-jekyll-an-epic-battle-of-static-site-generator-themes/&#34;&gt;this comparison&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;: because I already have a github account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;p&gt;Those choices made, let&amp;rsquo;s setup the blog.&lt;br&gt;
+I am running an &lt;strong&gt;Ubuntu 18.04.4 LTS&lt;/strong&gt; (&lt;code&gt;lsb_release -a&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;hugo-install&#34;&gt;Hugo Install&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# First install go&lt;/span&gt;
+sudo snap install go --classic
+&lt;span style=&#34;color:#75715e&#34;&gt;# Then install hugo&lt;/span&gt;
+sudo snap install hugo --channel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;extended
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;create-blog-site&#34;&gt;Create blog site&lt;/h3&gt;
+&lt;p&gt;I decided to simple name the website &lt;em&gt;blog&lt;/em&gt; using the existing &lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;hugo-kiera&lt;/a&gt; theme:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create site&lt;/span&gt;
+hugo new site blog
+cd blog
+&lt;span style=&#34;color:#75715e&#34;&gt;# Install the theme&lt;/span&gt;
+git init
+cd themes
+git submodule add https://github.com/funkydan2/hugo-kiera.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To later update the theme, simply use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd themes
+git submodule update --rebase --remote
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then edit the &lt;em&gt;config.tom&lt;/em&gt; file at the &lt;em&gt;blog&lt;/em&gt; root:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;see &lt;a href=&#34;https://gohugo.io/getting-started/configuration/&#34;&gt;the list&lt;/a&gt; of general parameters&lt;/li&gt;
+&lt;li&gt;see also &lt;a href=&#34;https://gohugo.io/variables/site/&#34;&gt;the list&lt;/a&gt; of variables&lt;/li&gt;
+&lt;li&gt;see the &lt;em&gt;Configuration&lt;/em&gt; of the &lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;hugo-keria&lt;/a&gt; theme&lt;/li&gt;
+&lt;li&gt;see the local file &lt;code&gt;themes/hugo-kiera/exampleSite/config.toml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;WARNING: when using &lt;a href=&#34;https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&#34;&gt;github pages&lt;/a&gt;,
+it is important to add to the &lt;em&gt;config.toml&lt;/em&gt; file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;publishDir = &amp;#34;docs&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Its is the directory in which &lt;em&gt;hugo&lt;/em&gt; will generate the static we site, which is also the repository
+expected by github to contains the web site.&lt;/p&gt;
+&lt;h2 id=&#34;create-a-new-article&#34;&gt;Create a new article&lt;/h2&gt;
+&lt;p&gt;If you are curious, you can learn more on the &lt;em&gt;Hugo&lt;/em&gt; &lt;a href=&#34;https://gohugo.io/getting-started/directory-structure/&#34;&gt;directory structure&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To add a new blog entry:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new blog/my_new_post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;One can also use static pages like an &lt;em&gt;about&lt;/em&gt; page:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new about.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;use-tags&#34;&gt;Use &lt;code&gt;tags&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Edit the newly created file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vim content/blog/my_new_post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And add values in the &lt;code&gt;tag&lt;/code&gt; and &lt;code&gt;category&lt;/code&gt; header. E.g. :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;tags: [rust, cow, parsing]
+categories: [rust advanced]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See possible &lt;a href=&#34;https://www.webfx.com/tools/emoji-cheat-sheet/&#34;&gt;emoji&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;create-a-github-page&#34;&gt;Create a github page&lt;/h2&gt;
+&lt;p&gt;All information are available &lt;a href=&#34;https://pages.github.com/&#34;&gt;here&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a new repository named &lt;em&gt;username&lt;/em&gt;.github.io&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;build-and-deploy&#34;&gt;Build and deploy&lt;/h2&gt;
+&lt;p&gt;Build and test on localhost (including drafts)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo server -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build the site (including drafts)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build (without draft)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deploy and github (from the &lt;code&gt;blog&lt;/code&gt; master directory)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git init
+git add -A
+git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;First commit&amp;#34;&lt;/span&gt;
+git remote add origin https://github.com/fxpineau/fxpineau.github.io.git
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&#34;https://github.com/avianto/hugo-kiera&#34;&gt;hugo-kiera&lt;/a&gt; page.&lt;/li&gt;
+&lt;li&gt;If formula are needed, check &lt;a href=&#34;https://sourcethemes.com/academic/&#34;&gt;academic&lt;/a&gt; and &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34;&gt;this academic examle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Blog used as example:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tarquin-the-brave.github.io/blog/&#34;&gt;https://tarquin-the-brave.github.io/blog/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tarquin-the-brave/blog&#34;&gt;https://github.com/tarquin-the-brave/blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tarquin-the-brave/blog/blob/master/config.toml&#34;&gt;https://github.com/tarquin-the-brave/blog/blob/master/config.toml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+     </item>
+   
+     <item>
+       <title>Rusty Cow!</title>
+       <link>https://fxpineau.github.io/blog/blog/rusty_cow/</link>
+       <pubDate>Fri, 15 May 2020 09:31:24 +0200</pubDate>
+       
+       <guid>https://fxpineau.github.io/blog/blog/rusty_cow/</guid>
+       <description>&lt;p&gt;An example use of the &lt;em&gt;clone-on-write&lt;/em&gt; smart pointer in &lt;em&gt;Rust&lt;/em&gt;, or &lt;code&gt;Cow&lt;/code&gt; for intimates.&lt;/p&gt;
+&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
+&lt;p&gt;I want to parse a &lt;em&gt;String&lt;/em&gt; that may contain &amp;ndash; in rare cases &amp;ndash; an escaped character.
+A typical use case is parsing a double quoted field containing a double quote like&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;I want to parse this \&amp;ldquo;kind of\&amp;rdquo; string&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I expect the parser to return the token&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I want to parse this &amp;ldquo;kind of&amp;rdquo; string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It means that most of the time &amp;ndash; when no character is escaped &amp;ndash; I do not need to edit
+the String and returning a &lt;code&gt;&amp;amp;str&lt;/code&gt; is fine.&lt;br&gt;
+But, sometimes, a string editing is needed and a &lt;code&gt;String&lt;/code&gt; (or a &lt;code&gt;Box&amp;lt;str&amp;gt;&lt;/code&gt;) has to be returned.&lt;/p&gt;
+&lt;h2 id=&#34;simple-solution&#34;&gt;Simple solution&lt;/h2&gt;
+&lt;p&gt;The problem is easy to solve: &lt;strong&gt;always&lt;/strong&gt; make a copy and return a &lt;code&gt;String&lt;/code&gt;.
+Applying the &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34;&gt;KISS&lt;/a&gt; principle,
+only the &lt;em&gt;string-needs-edition&lt;/em&gt; case which also fits the trivial
+&lt;em&gt;no-edition-needed&lt;/em&gt; case has to be coded.&lt;/p&gt;
+&lt;p&gt;Assuming the starting and ending double quotes have already been parsed and
+only the content is given in input of the &lt;code&gt;parse&lt;/code&gt; function, we get:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(input: &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;) -&amp;gt; String {
+  input
+    .char_indices()
+    .scan(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;skip, (_, c)&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; {
+      Some(&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!*&lt;/span&gt;skip {
+        &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+        None
+      } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+        &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+        Some(c)
+      })
+    })
+    .filter_map(&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;c&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; c)
+    .collect()
+}
+
+assert_eq&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;parse(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My holy cow!&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My holy cow&amp;#34;&lt;/span&gt;);
+assert_eq&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;parse(&lt;span style=&#34;color:#e6db74&#34;&gt;r#&amp;#34;My \&amp;#34;holy\&amp;#34; cow!&amp;#34;#), r#&amp;#34;My &amp;#34;holy&amp;#34; cow!&amp;#34;&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://play.rust-lang.org/?version=stable&amp;amp;mode=debug&amp;amp;edition=2018&amp;amp;code=fn%20parse(input%3A%20%26str)%20-%3E%20String%20%7B%0A%20%20%20%20input%0A%20%20%20%20%20%20%20%20.char_indices()%0A%20%20%20%20%20%20%20%20.scan(false%2C%20%7Cskip%2C%20(_%2C%20c)%7C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20Some(if%20c%20%3D%3D%20&#39;%5C%5C&#39;%20%26%26%20!*skip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20*skip%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20None%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20*skip%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Some(c)%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20%20%20.filter_map(%7Cc%7C%20c)%0A%20%20%20%20%20%20%20%20.collect()%0A%7D%0A%0Afn%20parse_v2(input%3A%20%26str)%20-%3E%20String%20%7B%0A%20%20%20%20let%20mut%20res%20%3D%20String%3A%3Awith_capacity(input.len())%3B%0A%20%20%20%20let%20mut%20skip%20%3D%20false%3B%0A%20%20%20%20for%20(_%2C%20c)%20in%20input.char_indices()%20%7B%0A%20%20%20%20%20%20%20%20if%20c%20%3D%3D%20&#39;%5C%5C&#39;%20%26%26%20!skip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20res.push(c)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20res%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20assert_eq!(%26parse(%22My%20holy%20cow!%22)%2C%20%22My%20holy%20cow%22)%3B%0A%20%20%20%20assert_eq!(%26parse(r%23%22My%20%5C%22holy%5C%22%20cow!%22%23)%2C%20r%23%22My%20%22holy%22%20cow!%22%23)%3B%0A%0A%20%20%20%20assert_eq!(%26parse_v2(%22My%20holy%20cow!%22)%2C%20%22My%20holy%20cow%22)%3B%0A%20%20%20%20assert_eq!(%26parse_v2(r%23%22My%20%5C%22holy%5C%22%20cow!%22%23)%2C%20r%23%22My%20%22holy%22%20cow!%22%23)%3B%0A%7D%0A&#34;&gt;See in Rust Playground&lt;/a&gt;
+with an additional &lt;em&gt;for-loop&lt;/em&gt; version.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Remarks: The code is &lt;em&gt;Clippy&lt;/em&gt; warning free and formatted using &lt;em&gt;rust-fmt&lt;/em&gt;  (exception made for the &lt;em&gt;two-spaces&lt;/em&gt; indentation instead of &lt;em&gt;tab&lt;/em&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;lazy-solution-for-tenacious-peoples-holy-cow&#34;&gt;Lazy solution for tenacious peoples: holy &lt;code&gt;Cow&lt;/code&gt;!&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s drop KISS for the benefit of reasonably optimized code (disclaimer: I am not an expert in optimization).
+For performance purposes, we actually want a &lt;em&gt;lazy copy&lt;/em&gt; of the string.
+I.e., we want to make a copy only if the string has to be modified.
+Using an &lt;code&gt;enum&lt;/code&gt; is a rather classical use case in such a situation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DoubleQuotedContent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; {
+  NoEscapedChar(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;),
+  HasEscapedChar(String),
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;(input: &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;) -&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DoubleQuotedContent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But wait, have a look at the &lt;a href=&#34;https://doc.rust-lang.org/std/string/struct.String.html&#34;&gt;String doc&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The String type [..] has a close relationship with its borrowed counterpart, the primitive str.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and, always looking &lt;a href=&#34;https://doc.rust-lang.org/std/primitive.str.html#impl-ToOwned&#34;&gt;at the doc&lt;/a&gt;,
+&lt;em&gt;str&lt;/em&gt; implements the &lt;a href=&#34;https://doc.rust-lang.org/std/borrow/trait.ToOwned.html&#34;&gt;ToOwned trait&lt;/a&gt;
+giving the example of how to get a &lt;code&gt;String&lt;/code&gt; from a &lt;code&gt;&amp;amp;str&lt;/code&gt; :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; s: &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; ss: String &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; s.to_owned();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Our enum is thus a particular case of &amp;ndash; and can be replaced by &amp;ndash; the more general
+&lt;a href=&#34;https://doc.rust-lang.org/std/borrow/enum.Cow.html&#34;&gt;Cow enum&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;pub&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Cow&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;, B&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
+     B: &lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; ToOwned &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;Sized, 
+{
+  Borrowed(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt; B),
+  Owned(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;B &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; ToOwned&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;::Owned),
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We could thus simply declare a new &lt;em&gt;type&lt;/em&gt; instead of a new &lt;code&gt;enum&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DoubleQuotedContent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; std::borrow::Cow&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, we assume that the first &lt;em&gt;double quote&lt;/em&gt; has been parsed and we continue
+parsing looking for the second one.&lt;br&gt;
+A first pass is performed to check for escaped characters.
+A second pass is performed only if edition is needed, which is assumed to be rare.&lt;br&gt;
+Although I don&amp;rsquo;t known if it may improve of worsen performances,
+I choose here to use three branches instead of two, not to uselessly reassign &lt;em&gt;false&lt;/em&gt;
+to the &lt;em&gt;skip&lt;/em&gt; variable.&lt;br&gt;
+Finally a basic error message is returned in case the ending &lt;em&gt;double quote&lt;/em&gt; is not found.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; std::borrow::Cow;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DoubleQuotedContent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; std::borrow::Cow&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;a&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(input: &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;) -&amp;gt; Result&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;DoubleQuotedContent&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;, String&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;mut&lt;/span&gt; n_escaped &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;mut&lt;/span&gt; skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;mut&lt;/span&gt; to &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (i, c) &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; input.char_indices() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; skip {
+      skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\&amp;#39;&lt;/span&gt; {
+      n_escaped &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+      skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; {
+      to &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i;
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+    }
+  }
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; to &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;input.is_empty() &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; input.as_bytes()[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; {
+    Err(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Closing character &amp;#39;\&amp;#34;&amp;#39; not found&amp;#34;&lt;/span&gt;.to_string())
+  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; n_escaped &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+    Ok(rm_escape_char(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;input[..to], n_escaped).into())
+  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+    Ok((&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;input[..to]).into())
+  }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rm_escape_char&lt;/span&gt;(input: &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;, n_escaped: &lt;span style=&#34;color:#66d9ef&#34;&gt;usize&lt;/span&gt;) -&amp;gt; String {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;mut&lt;/span&gt; res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; String::with_capacity(input.len() &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; n_escaped);
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;mut&lt;/span&gt; skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (_, ch) &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; input.char_indices() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; skip {
+      res.push(ch);
+      skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ch &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\&amp;#39;&lt;/span&gt; {
+      skip &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+      res.push(ch);
+    }
+  }
+  res
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can &lt;a href=&#34;https://play.rust-lang.org/?version=stable&amp;amp;mode=debug&amp;amp;edition=2018&amp;amp;code=use%20std%3A%3Aborrow%3A%3ACow%3B%0A%0Atype%20DoubleQuotedContent%3C&#39;a%3E%20%3D%20std%3A%3Aborrow%3A%3ACow%3C&#39;a%2C%20str%3E%3B%0A%0Afn%20parse(input%3A%20%26str)%20-%3E%20Result%3CDoubleQuotedContent%3C&#39;_%3E%2C%20String%3E%20%7B%0A%20%20%20%20let%20mut%20n_escaped%20%3D%200%3B%0A%20%20%20%20let%20mut%20skip%20%3D%20false%3B%0A%20%20%20%20let%20mut%20to%20%3D%200%3B%0A%20%20%20%20for%20(i%2C%20c)%20in%20input.char_indices()%20%7B%0A%20%20%20%20%20%20%20%20if%20skip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20c%20%3D%3D%20&#39;%5C%5C&#39;%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20n_escaped%20%2B%3D%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20c%20%3D%3D%20&#39;%22&#39;%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20to%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20if%20to%20%3D%3D%200%20%26%26%20!input.is_empty()%20%26%26%20input.as_bytes()%5B0%5D%20%3D%3D%20b&#39;%22&#39;%20%7B%0A%20%20%20%20%20%20%20%20Err(%22Closing%20character%20&#39;%5C%22&#39;%20not%20found%22.to_string())%0A%20%20%20%20%7D%20else%20if%20n_escaped%20%3E%200%20%7B%0A%20%20%20%20%20%20%20%20Ok(rm_escape_char(%26input%5B..to%5D%2C%20n_escaped).into())%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20Ok((%26input%5B..to%5D).into())%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20rm_escape_char(input%3A%20%26str%2C%20n_escaped%3A%20usize)%20-%3E%20String%20%7B%0A%20%20%20%20let%20mut%20res%20%3D%20String%3A%3Awith_capacity(input.len()%20-%20n_escaped)%3B%0A%20%20%20%20let%20mut%20skip%20%3D%20false%3B%0A%20%20%20%20for%20(_%2C%20ch)%20in%20input.char_indices()%20%7B%0A%20%20%20%20%20%20%20%20if%20skip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20res.push(ch)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20ch%20%3D%3D%20&#39;%5C%5C&#39;%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20skip%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20res.push(ch)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20res%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20assert_eq!(parse(r%23%22My%20holy%20cow!%22%22%23)%2C%20Ok(Cow%3A%3Afrom(%22My%20holy%20cow!%22)))%3B%0A%20%20%20%20assert_eq!(%0A%20%20%20%20%20%20%20%20parse(r%23%22My%20%5C%22holy%5C%22%20cow!%22%22%23)%2C%0A%20%20%20%20%20%20%20%20Ok(Cow%3A%3Afrom(r%23%22My%20%22holy%22%20cow!%22%23))%0A%20%20%20%20)%3B%0A%7D%0A&#34;&gt;test the above code&lt;/a&gt; in &lt;a href=&#34;https://play.rust-lang.org&#34;&gt;Rust Playground&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;Handling the &lt;em&gt;Cow enum&lt;/em&gt; has an arguably small &amp;ndash; but probably not negligible &amp;ndash; cost.
+The actual performance difference between the simple and &lt;em&gt;Cow&lt;/em&gt; based version
+should definitly be measured!&lt;/p&gt;
+&lt;p&gt;Any feedback welcome:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;not worth the extra complexity?&lt;/li&gt;
+&lt;li&gt;performances are improved &amp;ndash; or not &amp;ndash; in benches you performed?&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bibliographyrelated-links&#34;&gt;Bibliography/Related links:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Another &lt;a href=&#34;https://jwilm.io/blog/from-str-to-cow/&#34;&gt;blog post&lt;/a&gt; about &lt;code&gt;Cow&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;An in-depth &lt;a href=&#34;https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write&#34;&gt;blog post&lt;/a&gt; about Copy-On-Write in general (including C++)
+&lt;ul&gt;
+&lt;li&gt;referencing &lt;a href=&#34;http://www.gotw.ca/publications/optimizations.htm&#34;&gt;this post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+     </item>
+   
+ </channel>
+</rss>
